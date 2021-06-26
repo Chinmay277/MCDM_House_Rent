@@ -1,0 +1,20 @@
+search 
+
+
+furniture type --->dropdown(semi1 furnished2 non3)
+city state(Google  places)
+Aminity --->(Gym , Garden , swim)
+
+Deposite ===>(range)
+Property type ---> dropdown (1bhk ....)  ---> range 1bhk=1
+parkingType = 1space = 1 
+propertyMaintenanceType maintance=1 Nowithout=2 
+tenantType  batchler family=1
+waterSupplyType boarwell= 1 muncipalty=2 both=3
+Property Age ---> range selector 
+Property range--> Min n Max(range)
+
+
+
+After closing media link and docs from contact info it will again come to contact info that is not happeing 
+

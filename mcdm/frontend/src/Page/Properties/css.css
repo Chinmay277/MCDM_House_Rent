@@ -1,0 +1,13 @@
+
+
+.input-transfarent
+{
+    background: transparent !important;
+    border-bottom: 1px solid white !important;
+    color : white;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(175, 175, 175);
+    opacity: 1; /* Firefox */
+  }

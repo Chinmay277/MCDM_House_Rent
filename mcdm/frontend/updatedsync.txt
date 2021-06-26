@@ -1,0 +1,214 @@
+    let array = []
+    console.log("userid.xmppUserId", userid.xmppUserId);
+    var synchandler = await db.sync(new PouchDB("https://dev.bluesecures.com:4984/bluesecures"), {
+      live: true,
+      retry: true,
+      push: true,
+      pull: true,
+      heartbeat: true,
+      filter: "sync_gateway/bychannel",
+      query_params: {
+        channels: userid.xmppUserId
+      },
+    }).on('change', async (change) => {
+      //////
+      //   var result = (function () {
+      //    this.methodToOptimiseTheChatList()
+      // })();
+
+      //////debugger
+      console.log("changed", change);
+      debugger
+      ////console.log("documents",change.change.docs);
+
+      await Promise.all((change.change.docs || []).map(async (doc, index) => {
+        //////
+        debugger
+        console.log("when it comxes", doc.type);
+        if (doc.type === "Messages") {
+          let useriddSync = JSON.parse(localStorage.getItem("UserDetails"));
+          console.log("inside promise", doc);
+          let xmppcmpr = 0;
+          if (xmppMessageIdCompare === doc.xmppMessageId) {
+            //   xmppcmpr=xmppcmpr+1;
+
+          }
+          else {
+            xmppMessageIdCompare = doc.xmppMessageId;
+            xmppcmpr = xmppcmpr + 1;
+
+          }
+          //this.methodToOptimiseTheChatList()
+
+
+          //console.log("xmppcmprinside update",xmppcmpr);
+          let prevDocs = await getmessagesfrompouchdbForSync(doc.xmppMessageId);
+          let sendFlag = "R";
+          if (prevDocs.docs.length > 0) {
+            if (xmppcmpr === 1) {
+              //chatUserIdSynced=doc.receiverXmppId;
+              // array = await buildInputMessageComponent(this.state.xmppUserId,doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1);
+              // syncArr = await buildInputMessageComponent(this.state.xmppUserId,doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1);
+            }
+
+            //doc.attachment
+            await updateMessageDocumentFromSync(doc.id, doc.messageText, doc.linkType, doc.chatType, doc.receiverXmppId, doc.receiver, doc.sender, "", "", "", doc.senderNickName, doc.orgnizationId, doc.subscriberId, "", doc.messageType, "", doc.linkedMessageId, doc.star, "", "", "", doc.messageAlignment, doc.messageId, doc.overallMsgStatus, doc.deleteFlag, doc.deleteScope);
+          }
+          else {
+            //////
+            await insertmessagestopouchdb(doc.id, doc.messageText, doc.linkType, doc.chatType, doc.receiverXmppId, doc.receiver, doc.sender, "", "", "", doc.senderNickName, doc.orgnizationId, doc.subscriberId, "", doc.messageType, "", doc.linkedMessageId, doc.star, "", "", "", doc.messageAlignment, doc.datetime)
+
+            ////////
+
+            // if(this.state.chatuserid===doc.receiverXmppId){
+            if (doc.messageAlignment === "L") {
+              sendFlag = "L";
+            }
+            else {
+              sendFlag = "R";
+            }
+            //console.log("xmppcmprinside insert",xmppcmpr);
+            if (xmppcmpr === 1) {
+              //debugger
+
+
+              // array = await buildInputMessageComponent(useriddSync.xmppUserId, doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1);
+              // syncArr = await buildInputMessageComponent(useriddSync.xmppUserId, doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1);
+
+              // array = await buildInputMessageComponent(useriddSync.xmppUserId, doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1);
+              // syncArr = await buildInputMessageComponent(useriddSync.xmppUserId, doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1);
+
+            }
+          }
+          chatUserIdSynced = doc.receiverXmppId;
+          if (doc.receiverXmppId === this.state.chatuserid) {
+            array = await buildInputMessageComponent(useriddSync.xmppUserId, doc.receiverXmppId, doc.linkType, doc.linkedMessageId, "", "", doc.messageType, doc.messageText, doc.id, "", doc.chatType, doc.senderNickName, sendFlag, "", "", "", "", doc.star, "", "", doc.storageRefId, doc.attachment, doc.orgnizationId, doc.subscriberId, 1)
+
+          }
+          let userDetailsFW = await getUserDetailsNew(doc.receiverXmppId, doc.orgnizationId, doc.subscriberId)
+          if (userDetailsFW.docs.length > 0) {
+            //////////////////////////////////////////debugger
+            let messageText = doc.messageText;
+            // updateMessageToUsers(userDetailsFW.docs[0]._id, "", Date().toLocaleLowerCase());
+            if (MEDIUMENCRYPTION) {
+              if (doc.messageType === "text") {
+                let userDetails = await getSubscriberDet(doc.subscriberId);
+                let subscriberKey = "";
+                var result = "", keydec = "";
+                if (userDetails.docs.length > 0) {
+                  subscriberKey = userDetails.docs[0].subscriberKey;
+                  // keydec = await getSubscriberKeyDec(subscriberKey);
+                  if (subscriberKey !== undefined) {
+                    if (subscriberKey != "") {
+                      try {
+                        const decryptedString = await getSubscriberKeyDec(subscriberKey);
+                        console.log('decryptedString %s', decryptedString);
+
+                        const cipherText = decryptToMessageNew(messageText, decryptedString);
+                        console.log('cipherText %s', cipherText);
+                        messageText = cipherText;
+
+                      }
+                      catch (err) {
+                        messageText = messageText;
+                        //console.log("err",err);
+                      }
+
+
+
+                      // var resizedIV = Buffer.allocUnsafe(16);
+                      // var iv = crypto.createHash("sha256").update("myHashedIV").digest();
+                      // iv.copy(resizedIV);
+                      // var encryptDecryptKey = crypto.createHash("sha256").update("rqWabc29JQR").digest();
+                      // var decipher = crypto.createDecipheriv("aes256", encryptDecryptKey, resizedIV);
+                      // var msg = [];
+                      // msg.push(decipher.update(subscriberKey, "hex", "binary"));
+                      // msg.push(decipher.final("binary"));
+                      // result = msg.join("");
+
+
+                    }
+                    try {
+                      // var resizedIV1 = Buffer.allocUnsafe(16);
+                      // var iv1 = crypto.createHash("sha256").update("myHashedIV").digest();
+                      // iv1.copy(resizedIV1);
+                      // var encryptDecryptKey1 = crypto.createHash("sha256").update(result).digest();
+                      // var cipher1 = crypto.createCipheriv("aes256", encryptDecryptKey1, resizedIV1);
+                      // var msg1 = [];
+                      // msg1.push(cipher1.update(messageText, "binary", "hex"));
+                      // msg1.push(cipher1.final("hex"));
+                      // var result1 = msg1.join("");
+                      // decryptToMessage(result1, result)
+                    }
+                    catch (err) {
+                      result = "";
+                    }
+
+                  }
+
+                }
+              } else {
+                messageText = messageText;
+              }
+
+              // var ciphertext = CryptoJS.AES.encrypt(messageText, subscriberId).toString();
+              // console.log("ciphertext", ciphertext);
+              // var bytes = CryptoJS.AES.decrypt(ciphertext, subscriberId);
+              // var originalText = bytes.toString(CryptoJS.enc.Utf8);
+            }
+            await updateMessageToUsersRawInput(userDetailsFW.docs[0]._id, messageText, Date().toLocaleLowerCase(), 0, "text");
+            await this.methodToOptimiseTheChatList();
+            if (array.length > 0) {
+              arr.push(array[0]);
+              this.setState({ message: arr });
+            }
+            // window.methodToOptimiseTheChatList()
+
+
+            // UpdateUserDetails(userDetails.docs[0]._rev, userDetails.docs[0].userId, userDetails.docs[0].email, userDetails.docs[0].mobile, userDetails.docs[0].nickName, userDetails.docs[0].orgnizationId, userDetails.docs[0].subscriberId, userDetails.docs[0].xmppUserId, userDetails.docs[0].userDp, userDetails.docs[0].countryCode, userDetails.docs[0].isComplete, userDetails.docs[0].userType, userDetails.docs[0].decodedImage, messageInChatList, Date().toLocaleLowerCase(), userDetails.docs[0].chat, userDetails.docs[0].userIEType, userDetails.docs[0].specialRole, userDetails.docs[0].userSubType, userDetails.docs[0].address, userDetails.docs[0].city, userDetails.docs[0].companyName, userDetails.docs[0].country, userDetails.docs[0].pin, userDetails.docs[0].reasonToAdd, userDetails.docs[0].state, userDetails.docs[0].isMuted, userDetails.docs[0].isOnDND, userDetails.docs[0].isFreeze, userDetails.docs[0].freezeTimeStamp, userDetails.docs[0].isSuperAdmin, userDetails.docs[0].statusMessage, userDetails.docs[0].userStatus, userDetails.docs[0].createdById, userDetails.docs[0].activeTS, userDetails.docs[0].createdDate, userDetails.docs[0].lastUpdatedById, userDetails.docs[0].lastUpdatedDate)
+            // this.methodToOptimiseTheChatList();
+            // UpdateUserDetails(userDetailsFW.docs[0]._rev, userDetailsFW.docs[0].userId, userDetailsFW.docs[0].email, userDetailsFW.docs[0].mobile, userDetailsFW.docs[0].nickName, userDetailsFW.docs[0].orgnizationId, userDetailsFW.docs[0].subscriberId, userDetailsFW.docs[0].xmppUserId, userDetailsFW.docs[0].userDp, userDetailsFW.docs[0].countryCode, userDetailsFW.docs[0].isComplete, userDetailsFW.docs[0].userType, userDetailsFW.docs[0].decodedImage, "", Date().toLocaleLowerCase(), userDetailsFW.docs[0].chat, userDetailsFW.docs[0].userIEType, userDetailsFW.docs[0].specialRole, userDetailsFW.docs[0].userSubType, userDetailsFW.docs[0].address, userDetailsFW.docs[0].city, userDetailsFW.docs[0].companyName, userDetailsFW.docs[0].country, userDetailsFW.docs[0].pin, userDetailsFW.docs[0].reasonToAdd, userDetailsFW.docs[0].state, userDetailsFW.docs[0].isMuted, userDetailsFW.docs[0].isOnDND, userDetailsFW.docs[0].isFreeze, userDetailsFW.docs[0].freezeTimeStamp, userDetailsFW.docs[0].isSuperAdmin, userDetailsFW.docs[0].statusMessage, userDetailsFW.docs[0].userStatus, userDetailsFW.docs[0].createdById, userDetailsFW.docs[0].activeTS, userDetailsFW.docs[0].createdDate, userDetailsFW.docs[0].lastUpdatedById, userDetailsFW.docs[0].lastUpdatedDate)
+
+
+          }
+        }
+        else if (doc.type === "session") {
+          //
+          console.log("sessions", doc.type);
+          let sessionDocs = await getSessionFromPouchDb("session", doc.xmppUserId);
+
+          //  ////console.log("session",fetchAuth.data.xmppUserId);
+          if (sessionDocs.docs.length === 0) {
+            ////console.log("session guid",uniq);
+
+
+            await insertSessionToPouchDb(doc._id, doc.xmppUserId, "session", doc.browserName, doc.ipAddress, doc.location, doc.lat, doc.lng, doc.epochTimeStamp, doc.oS, 1, doc.batteryPercentage);
+
+          }
+          else {
+            await updateSessiontopouchdb(doc._id, doc.location, doc.batteryPercentage, doc.isActive);
+          }
+          //this.setState({ phoneBatteryPercentage: doc.batteryPercentage });
+        }
+      }));
+
+      //////
+      //  if (array.length > 0) {
+      //  await this.showTheMessage(array);
+      // }
+
+    }).on('paused', (info) => {
+      // replication was paused, usu  ally because of a lost connection
+      console.log("paused", info);
+    }).on('active', (info) => {
+      //////
+      // replication was resumed
+      console.log("active", info);
+    }).on('error', (err) => {
+      //////
+      // totally unhandled error (shouldn't happen)
+      console.log("error", err);
+    }).on('complete', (info) => {
+      console.log("completed", info);
+
+    });

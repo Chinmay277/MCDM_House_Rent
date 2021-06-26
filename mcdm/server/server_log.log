@@ -1,0 +1,446 @@
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 100, in create
+    [1,          mt[0],      mt[1],      mt[2]],
+TypeError: 'NoneType' object is not subscriptable
+----------
+----------
+{'types': [[3, 1]]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 106, in create
+    return Response({'detail' : 'OK', 'data': data, 'ranks': ranks})
+UnboundLocalError: local variable 'ranks' referenced before assignment
+----------
+----------
+{'all': 'all'}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 106, in create
+    return Response({'detail' : 'OK', 'data': data, 'ranks': ranks})
+UnboundLocalError: local variable 'ranks' referenced before assignment
+----------
+----------
+{'all': 'all'}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 107, in create
+    return Response({'detail' : 'OK', 'data': data, 'ranks': ranks})
+UnboundLocalError: local variable 'ranks' referenced before assignment
+----------
+----------
+{'all': 'all'}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 102, in create
+    [1,          mt[0],      mt[1],      mt[2]],
+TypeError: 'NoneType' object is not subscriptable
+----------
+----------
+{'types': [[3, 1]]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 104, in create
+    [1/mt[1],    1/mt[3],    1,          mt[5]],
+ZeroDivisionError: division by zero
+----------
+----------
+{'types': [[3, 1]], 'mat': [1, 3, 7, 0, 7, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 108, in create
+    print("l", len(dat))
+NameError: name 'dat' is not defined
+----------
+----------
+{'types': [[3, 1]], 'mat': [9, 9, 9, 9, 9, 9]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 107, in create
+    ranks = ahp(data_location=data_location, mat=mat)
+  File "D:\Projects\mcdm\server\property\main.py", line 70, in ahp
+    data = load_data(data_location)
+  File "D:\Projects\mcdm\server\property\main.py", line 43, in load_data
+    return load_from_sample()
+  File "D:\Projects\mcdm\server\property\main.py", line 16, in load_from_sample
+    data_file = open('data.sql', 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'data.sql'
+----------
+----------
+{'types': [[3, 1]], 'mat': [9, 9, 9, 9, 9, 9], 'rent_max': 2500}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 107, in create
+    ranks = ahp(data_location=data_location, mat=mat)
+  File "D:\Projects\mcdm\server\property\main.py", line 70, in ahp
+    data = load_data(data_location)
+  File "D:\Projects\mcdm\server\property\main.py", line 43, in load_data
+    return load_from_sample()
+  File "D:\Projects\mcdm\server\property\main.py", line 16, in load_from_sample
+    data_file = open('data.sql', 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'data.sql'
+----------
+----------
+{'types': [[3, 1]], 'mat': [9, 9, 9, 9, 9, 9], 'rent_max': 1250}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 107, in create
+    ranks = ahp(data_location=data_location, mat=mat)
+  File "D:\Projects\mcdm\server\property\main.py", line 70, in ahp
+    data = load_data(data_location)
+  File "D:\Projects\mcdm\server\property\main.py", line 43, in load_data
+    return load_from_sample()
+  File "D:\Projects\mcdm\server\property\main.py", line 16, in load_from_sample
+    data_file = open('data.sql', 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'data.sql'
+----------
+----------
+{'types': [[3, 1]], 'mat': [9, 9, 9, 9, 9, 9], 'rent_max': 2500}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 107, in create
+    ranks = ahp(data_location=data_location, mat=mat)
+  File "D:\Projects\mcdm\server\property\main.py", line 70, in ahp
+    data = load_data(data_location)
+  File "D:\Projects\mcdm\server\property\main.py", line 43, in load_data
+    return load_from_sample()
+  File "D:\Projects\mcdm\server\property\main.py", line 16, in load_from_sample
+    data_file = open('data.sql', 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'data.sql'
+----------
+----------
+{'types': [[3, 1]], 'mat': [9, 9, 9, 9, 9, 9], 'rent_max': 500}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 108, in create
+    ranks = ahp(data_location=data_location, mat=mat)
+  File "D:\Projects\mcdm\server\property\main.py", line 70, in ahp
+    data = load_data(data_location)
+  File "D:\Projects\mcdm\server\property\main.py", line 43, in load_data
+    return load_from_sample()
+  File "D:\Projects\mcdm\server\property\main.py", line 16, in load_from_sample
+    data_file = open('data.sql', 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'data.sql'
+----------
+----------
+{'types': [[3, 1]], 'mat': [9, 9, 9, 9, 9, 9], 'rent_max': 500}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 103, in create
+    [1,          mt[0],      mt[1],      mt[2]],
+TypeError: 'NoneType' object is not subscriptable
+----------
+----------
+{'types': [[3, 1]], 'rent_max': 31000}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 93, in create
+    kwargs[lst1[-1]] = pt[0]
+IndexError: list index out of range
+----------
+----------
+{'mat': [1, 3, 5, 7, 9, 7], 'types': [[]], 'rent_max': 4000}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 96, in create
+    tmp.values_list('propertyrent', 'propertydeposit', 'propertytype', 'propertyfloor')]
+  File "D:\Projects\mcdm\server\property\views.py", line 95, in <listcomp>
+    data_location += [[d[0], d[1], pt[1], d[3]] for d in
+IndexError: list index out of range
+----------
+----------
+{'mat': [1, 3, 5, 7, 9, 7], 'types': [[3]], 'rent_max': 4000}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    return Response({detail : 'OK', 'data': data, 'ranks': ranks})
+NameError: name 'detail' is not defined
+----------
+----------
+{'types': [[3, 1]], 'mat': [5, 4, 7, 0.5, 3, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    print("integreted : ", [data[i]+[ranks[i]] for i in range(len(data))])
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in <listcomp>
+    print("integreted : ", [data[i]+[ranks[i]] for i in range(len(data))])
+TypeError: can only concatenate tuple (not "list") to tuple
+----------
+----------
+{'types': [[3, 1]], 'mat': [5, 4, 7, 0.5, 3, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    print("integreted : ", [data[i]+(ranks[i]) for i in range(len(data))])
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in <listcomp>
+    print("integreted : ", [data[i]+(ranks[i]) for i in range(len(data))])
+TypeError: must be str, not int
+----------
+----------
+{'types': [[3, 1]], 'mat': [5, 4, 7, 0.5, 3, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    print("integreted : ", [data[i] + (ranks[i]) for i in range(len(data))])
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in <listcomp>
+    print("integreted : ", [data[i] + (ranks[i]) for i in range(len(data))])
+TypeError: must be str, not int
+----------
+----------
+{'types': [[3, 1]], 'mat': [5, 4, 7, 0.5, 3, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    print("integreted : ", [data[i] + (ranks[i]) for i in range(len(data))])
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in <listcomp>
+    print("integreted : ", [data[i] + (ranks[i]) for i in range(len(data))])
+TypeError: must be str, not int
+----------
+----------
+{'types': [[3, 1]], 'mat': [5, 4, 7, 0.5, 3, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 110, in create
+    return Response({'detail' : 'OK', 'data': [data[i] + (ranks[i],) for i in rage(len(data))], 'ranks': ranks})
+NameError: name 'rage' is not defined
+----------
+----------
+{'types': [[3, 1]], 'mat': [5, 4, 7, 0.5, 3, 3]}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 93, in create
+    for pt in request.data.get('types'):
+TypeError: 'NoneType' object is not iterable
+----------
+----------
+{'crossDomain': True, 'crossOrigin': True, 'query': {'type': [[0, [True, 1]], [1, [True, 2]], [2, [True, 3]], [3, [True, 4]], [4, [True, 5]]], 'mat': [1, 1, 1, 1, 1, 1], 'rent_min': 10000, 'rent_max': 50000, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 93, in create
+    for pt in request.data.get('types'):
+TypeError: 'NoneType' object is not iterable
+----------
+----------
+{'crossDomain': True, 'crossOrigin': True, 'type': [[0, [True, 1]], [1, [True, 2]], [2, [True, 3]], [3, [True, 4]], [4, [True, 5]]], 'mat': [1, 1, 1, 1, 1, 1], 'rent_min': 10000, 'rent_max': 50000, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    [1/mt[0],    1,          mt[3],      mt[4]],
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+----------
+----------
+{'types': [[4, 5]], 'mat': ['5', '3', '9', 1, 1, 1], 'rent_min': 10000, 'rent_max': 50000, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 109, in create
+    [1/mt[0],    1,          mt[3],      mt[4]],
+TypeError: unsupported operand type(s) for /: 'int' and 'str'
+----------
+----------
+{'types': [[4, 5]], 'mat': ['5', '3', '9', 1, 1, 1], 'rent_min': 10000, 'rent_max': 50000, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 116, in create
+    print("integreted : ", [data[0] + (ranks[0],)])
+IndexError: list index out of range
+----------
+----------
+{'types': [[1, 2], [2, 3], [3, 4], [4, 5]], 'mat': [1, 1, 1, 1, 1, 1], 'rent_min': 5000, 'rent_max': 5000, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 116, in create
+    print("integreted : ", data[0] if data else "no data", ranks[0] if ranks else "no ranks")
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+----------
+----------
+{'types': [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]], 'mat': [1, 1, 1, 1, 1, 1], 'rent_min': 5256, 'rent_max': 7813, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 116, in create
+    print("integreted : ", data[0] if data else "no data", ranks[0] if ranks else "no ranks")
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+----------
+----------
+{'types': [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]], 'mat': [1, 1, 1, 1, 1, 1], 'rent_min': 5256, 'rent_max': 9347, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
+---------------
+---------------
+---------------
+Traceback (most recent call last):
+  File "D:\Projects\mcdm\server\property\views.py", line 116, in create
+    print("integreted : ", data[0] if data else "no data", ranks[0] if ranks else "no ranks")
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+----------
+----------
+{'types': [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5]], 'mat': [1, 1, 1, 1, 1, 1], 'rent_min': 5256, 'rent_max': 11904, 'deposit_min': 10000, 'deposit_max': 50000, 'floor_min': 1, 'floor_max': 12}
+
+
+
+
